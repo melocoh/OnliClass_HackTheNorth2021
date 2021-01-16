@@ -1,14 +1,20 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
 .wrapper {
     display: grid;
     grid-template-areas: 
-        "black black black red red red red red"
-        "blue blue blue green green green green grey"
+        "black black red red red red"
+        "blue blue green green green grey"
     ;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 50px;
     /* grid-template-rows: 100px 350px; */
-    height: calc(100vh - 10px);
-    grid-gap:10px;
-    margin: 40px;
+    height: 100%;
+    grid-gap:50px;
+    margin: 1%;
 }
 
 .black {
