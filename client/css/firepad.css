@@ -1,0 +1,10 @@
+#firepad {
+  width: 20%;
+  height: 50%;
+  background-color: bisque;
+}
+
+#userlist {
+  position: absolute; left: 0; top: 0; bottom: 0; height: auto;
+  width: 175px;
+}
