@@ -6,16 +6,14 @@ window.onload = function () {
   // (optional) add server code here
 
   var SERVER_BASE_URL = 'http://localhost:8080';
-  fetch(SERVER_BASE_URL + '/session').then(function (res) {
+  fetch(SERVER_BASE_URL + '/session').then((res) =>  {
     return res.json()
-  }).then(function (res) {
+  }).then((res) => {
     apiKey = res.apiKey;
     sessionId = res.sessionId;
     token = res.token;
     initializeSession();
   }).catch(handleError);
-
-  initializeSession();
 
   // Handling all of our errors here by alerting them
   function handleError(error) {
@@ -30,6 +28,7 @@ window.onload = function () {
   function initializeSession() {
     var session = OT.initSession(apiKey, sessionId);
 
+    console.log('Initializing a OpenTok video session');
     /**
      * Subscribe to a newly created stream. 
      * @param event.stream is the stream object to which the client is subscribing
@@ -38,7 +37,7 @@ window.onload = function () {
      * succeeds or fails
      */
 
-    session.on('streamCreated', function (event) {
+    session.on('streamCreated',  (event) =>  {
       session.subscribe(event.stream, 'subscriber', {
         insertMode: 'append',
         width: '100%',
@@ -61,7 +60,6 @@ window.onload = function () {
 
     // Connect to the session
     session.connect(token, function (error) {
-      // If the connection is successful, publish to the session
       if (error) {
         handleError(error);
       } else {
