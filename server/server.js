@@ -11,8 +11,7 @@ const port = process.env.PORT || 3000;
 const io = require('socket.io')(server);
 const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
 
-
-
+/* Router */
 let indexRouter = require('./routes/index');
 
 const hostname = 'http://localhost:' + port;
