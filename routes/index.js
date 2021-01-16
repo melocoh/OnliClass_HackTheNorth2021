@@ -1,10 +1,10 @@
-var express = require('express');
-var router = express.Router();
-var path = require('path');
-var _ = require('lodash');
+let express = require('express');
+let router = express.Router();
+let path = require('path');
+let _ = require('lodash');
 
-var apiKey = process.env.TOKBOX_API_KEY;
-var secret = process.env.TOKBOX_SECRET;
+const apiKey = process.env.TOKBOX_API_KEY;
+const secret = process.env.TOKBOX_SECRET;
 
 if (!apiKey || !secret) {
   console.error('=========================================================================================================');
@@ -32,11 +32,10 @@ function findRoomFromSessionId(sessionId) {
   return _.findKey(roomToSessionIdDictionary, function (value) { return value === sessionId; });
 }
 
+  // _-_-_-_- Entry Point -_-_-_-_-_
 router.get('/', function (req, res) {
-  // does not trigger for now
-  // browser automatically gets the index.html file from the public folder
 
-  // res.sendFile('index.html');
+  res.sendFile(path.join(__dirname, '../public', 'index.html'))
 });
 
 /**
@@ -148,8 +147,8 @@ router.get('/archive/:archiveId/view', function (req, res) {
     if (archive.status === 'available') {
       res.redirect(archive.url);
     } else {
-      res.sendFile('view.html');
-      // renders the archive page
+      // res.sendFile(path.join(__dirname, '../public', 'render.html'))
+      // there is currently no archive page
     }
   });
 });

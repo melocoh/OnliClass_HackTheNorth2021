@@ -1,28 +1,26 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+// this file pretty much does nothing, all the fun stuff happens in /routes/index.js
 
-var index = require('./routes/index');
-var cors = require('cors');
-const { resolveAny } = require('dns');
-var app = express();
+let express = require('express');
+let path = require('path');
+let logger = require('morgan');
+let cookieParser = require('cookie-parser');
+let bodyParser = require('body-parser');
+let cors = require('cors');
+let index = require('./routes/index')
+
+let app = express();
 
 app.use(cors());
-
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  let err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
@@ -32,14 +30,9 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-
-  console.log('error message');
-
-  // error page
-  res.sendFile(path.join(__dirname, 'public', 'error.html'));
 });
+
+
+app.use(express.static(path.join(__dirname, '/public'))); // ! ! this has to be declared last or else it just serves index.html when going to root website directory
 
 module.exports = app;
