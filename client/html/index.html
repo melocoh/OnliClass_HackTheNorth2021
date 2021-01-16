@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+   <head>
+      <link rel="stylesheet" href="../css/index.css">
+      <link rel="stylesheet" href="../css/canvas.css">
+      <link rel="stylesheet" href="../css/app.css">
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+      <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+
+   </head>
+   <body>
+      <div id="container-wrapper">
+         <div id = "container">
+            <h1 id = "room_num_header"> N/A </h1>
+            <form id = "room_form">
+               <label for="room_num">Room #:</label><br>
+               <input type="text" id="room_num" name="room_num"><br>
+               <input type="button" value="Join this room" onclick="joinRoom();"/>
+            </form>
+            <form id = "create_room_form">
+               <label for="room_num">Room #:</label><br>
+               <input type="text" id="create_room_num" name="room_num"><br>
+               <input type="button" value="Create a room" onclick="createRoom();" />
+            </form>
+            <form>
+               <input id="clickLeave" type="button" value="Leave a room" onclick="leaveRoom();" />
+            </form>
+               <input id="clickCreateRandom" type="button" value="Create Random Room" onclick="createRandomRoom();" />
+            </form>
+            <form>
+               <input id="init" type="button" value="huh" onclick="init();" />
+            </form>
+                                                   
+            <!-- Chat -->
+            <div id="chat">
+               <div id="chatRoom">
+               </div>
+               <div id="messageArea">
+                  <div>
+                     <input id="messageBar" autocomplete="off" placeholder="Type here..." />
+                  </div>
+                  <div>
+                     <button id="sendButton" type='button'>Send</button>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Canvas -->
+            <div id = "canvasHolder" style = "display: inline-block"> 
+               <div id="color">
+                  <input type="color" id="colorChoice" value="#000000">
+                </div>
+                <canvas id="whiteboard" width="700" height="420" ></canvas>
+            </div>
+
+
+            <!-- Video -->
+            <div id="videos" style = "background-color: blue;">
+               <div id="subscriber"></div>
+               <div id="publisher"></div>
+           </div>
+         </div>
+      </div>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="/js/connect.js"></script>
+      <script src = "/js/chat.js"></script>
+      <script src = "/js/canvas.js"></script>
+      <script src = "/js/video.js"></script>
+
+   </body>
+</html>

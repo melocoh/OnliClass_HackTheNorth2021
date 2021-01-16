@@ -1,0 +1,21 @@
+
+#whiteboard {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: white;
+}
+
+#color {
+  padding-top: 10px;
+  padding-left: 10px;
+  position: fixed;
+  z-index: 1;
+}
+
+#canvasHolder{
+  grid-area: ca;
+  width: 700px;
+  height:420px;
+}

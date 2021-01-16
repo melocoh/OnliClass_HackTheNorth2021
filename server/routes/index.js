@@ -6,6 +6,7 @@ let _ = require('lodash');
 const apiKey = process.env.TOKBOX_API_KEY;
 const secret = process.env.TOKBOX_SECRET;
 
+
 if (!apiKey || !secret) {
   console.error('=========================================================================================================');
   console.error('');
@@ -17,8 +18,8 @@ if (!apiKey || !secret) {
   process.exit();
 }
 
-var OpenTok = require('opentok');
-var opentok = new OpenTok(apiKey, secret);
+const OpenTok = require('opentok');
+const opentok = new OpenTok(apiKey, secret);
 
 // IMPORTANT: roomToSessionIdDictionary is a variable that associates room names with unique
 // unique session IDs. However, since this is stored in memory, restarting your server will
@@ -35,7 +36,8 @@ function findRoomFromSessionId(sessionId) {
   // _-_-_-_- Entry Point -_-_-_-_-_
 router.get('/', function (req, res) {
 
-  res.sendFile(path.join(__dirname, '../public', 'index.html'))
+  console.log(__dirname);
+  res.sendFile(path.join(__dirname, '../../client/html', 'index.html'))
 });
 
 /**

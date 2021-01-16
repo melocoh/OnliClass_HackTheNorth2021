@@ -1,0 +1,81 @@
+
+body {
+  font: 13px Helvetica, Arial;
+  background-color: #EEEEEE;
+}
+
+
+/* Grid Container */
+#container {
+  display: grid;
+  grid-template-areas: 
+  "hd hd hd hd hd hd hd hd hd"
+  "ca ca ca ca ca ca ch ch ch";
+  grid-column-gap: 10px;
+  margin: 1vh 5vw 1vh 5vw;
+}
+
+
+/* Chat Section */
+#chat {
+  grid-area: ch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+}
+
+#chatRoom {
+  background-color: white;
+  padding: 10px 15px 10px 15px;
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#chatRoom li {
+  list-style-type: none;
+}
+
+#messageArea {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 5px 10px 5px;
+}
+
+#messageBar {
+  border: 1px solid rgb(215, 215, 215);
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  margin-right: 10px;
+  width:16vw;
+}
+
+textarea:focus, #messageBar:focus{
+  outline: none;
+}
+
+#sendButton {
+  background-color: rgb(31, 165, 255);
+  color: rgb(255, 255, 255);
+  padding: 5px 10px 5px 10px;
+  border: 1px solid rgb(31, 165, 255);
+  border-radius: 5px;
+  outline: none;
+}
+
+#header{
+  grid-area: hd;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: VT323;
+  font-size: 50px;
+  text-align: center;
+}
