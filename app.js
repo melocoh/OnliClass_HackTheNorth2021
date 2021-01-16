@@ -15,8 +15,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 app.use('/', index);
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -33,6 +34,5 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.use(express.static(path.join(__dirname, '/public'))); // ! ! this has to be declared last or else it just serves index.html when going to root website directory
 
 module.exports = app;
