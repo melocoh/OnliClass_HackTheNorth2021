@@ -14,6 +14,8 @@ const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-na
 /* Router */
 let indexRouter = require('./routes/index');
 
+app.use(express.static(path.join(__dirname, "../client")));
+
 const hostname = 'http://localhost:' + port;
 const allRooms = new Map();
 const allClients = [];
@@ -196,7 +198,6 @@ io.on('connection', (socket) => {
     });
 });
 
-app.use(express.static(path.join(__dirname, "../client")));
 
 app.use('/', indexRouter);
 
