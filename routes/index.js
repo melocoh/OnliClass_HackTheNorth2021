@@ -33,7 +33,10 @@ function findRoomFromSessionId(sessionId) {
 }
 
 router.get('/', function (req, res) {
-  res.render('index', { title: 'Learning-OpenTok-Node' });
+  // does not trigger for now
+  // browser automatically gets the index.html file from the public folder
+
+  // res.sendFile('index.html');
 });
 
 /**
@@ -145,7 +148,8 @@ router.get('/archive/:archiveId/view', function (req, res) {
     if (archive.status === 'available') {
       res.redirect(archive.url);
     } else {
-      res.render('view', { title: 'Archiving Pending' });
+      res.sendFile('view.html');
+      // renders the archive page
     }
   });
 });
