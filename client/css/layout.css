@@ -1,0 +1,39 @@
+.wrapper {
+    display: grid;
+    grid-template-areas: 
+        "black black black red red red red red"
+        "blue blue blue green green green green grey"
+    ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /* grid-template-rows: 100px 350px; */
+    height: calc(100vh - 10px);
+    grid-gap:10px;
+    margin: 40px;
+}
+
+.black {
+    grid-area: black;
+    background-color: darkgrey;
+}
+
+
+.red {
+    grid-area: red;
+    background-color: red;
+}
+
+.blue {
+    grid-area: blue;
+    background-color: blue;
+    width: 5x;
+}
+
+.green {
+    grid-area: green;
+    background-color: green;
+}
+
+.grey {
+    grid-area: grey;
+    background-color: lightgray;
+}
