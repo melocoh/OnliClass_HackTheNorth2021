@@ -1,4 +1,6 @@
-
+body{
+  background-color:rgb(31, 165, 255)
+}
 
 
 header {
@@ -20,6 +22,7 @@ body {
 #chatRoom {
   background-color: white;
   padding: 10px 15px 10px 15px;
+  min-height: 30vh;
   max-height: 70vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -64,9 +67,8 @@ textarea:focus, #messageBar:focus{
   display: grid;
   grid-template-areas: 
   "calc calc calc calc vid vid" 
-  "canv canv canv canv canv chat"
+  "canv canv canv canv chat chat"
   ;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
   height: 100%;
   grid-gap: 20px;
   margin: 1% 13%;
