@@ -185,6 +185,12 @@ io.on('connection', (socket) => {
     // Handle disconnected users */
     socket.on('disconnect', () => {
         console.log('Someone disconnected!');
+
+        if(joined_room && allRooms.get(joined_room).has(socket)){
+            allRooms.get(joined_room).delete(socket);
+            if(allRooms.get(joined_room).size == 0) allRooms.delete(joined_room);
+            console.log(allRooms.has(joined_room));
+        }
         var i = allClients.indexOf(socket);
         allClients.splice(i, 1);
     });
