@@ -2,6 +2,7 @@
 <html>
    <head>
       <link rel="stylesheet" href="../css/index.css">
+      <link rel="stylesheet" href="../css/overlay.css">
       <link rel="stylesheet" href="../css/chat.css">
       <link rel="stylesheet" href="../css/canvas.css">
       <link rel="stylesheet" href="../css/video.css">
@@ -29,7 +30,26 @@
 
    </head>
    <body>
-      <div id="container-wrapper">
+
+      <div id = "name_overlay" class = "overlay">
+         <div class="form">
+            <h3 class="title">What's your nickname?</h3>
+            <input id = "usernameInput" class="overlayInput" type="text" maxlength="14" />
+         </div>
+      </div>
+
+      <div id = "room_overlay" class = "overlay hidden">
+         <div class="form">
+            <h3 class="title">Enter your room number</h3>
+            <input id = "roomnumInput" class = "overlayInput" type="text" maxlength="14" />
+         </div>
+      </div>
+
+
+
+
+
+      <div id="container-wrapper" class = "hidden">
          <div id = "container">
             <h1 id = "room_num_header"> N/A </h1>
             <form id = "room_form">
@@ -88,8 +108,9 @@
        
          </div>
       </div>
-      <script src="/socket.io/socket.io.js"></script>
-      <script src="/js/connect.js"></script>
+
+      <script src = "/socket.io/socket.io.js"></script>
+      <script src = "/js/connect.js"></script>
       <script src = "/js/chat.js"></script>
       <script src = "/js/canvas.js"></script>
       <script src = "/js/video.js"></script>

@@ -21,23 +21,22 @@ const leaveRoom = () => {
     socket.emit('leave_room', data);
 }
 
-const joinRoom = () =>{
-    let room_num = document.getElementById('room_num').value;
-    if(room_num){
+const joinRoom = (room_num, nickname) => {
+    if (room_num) {
 
         data = {
-            username: 'temp',
+            username: nickname,
             room_num: room_num,
         }
         socket.emit("join_room", data);
     }
-    
+
 }
 
 const createRoom = () => {
 
     let room_num = document.getElementById('create_room_num').value;
-    if(room_num){
+    if (room_num) {
         data = {
             username: 'temp',
             room_num: room_num,
@@ -78,4 +77,3 @@ socket.on('leave_room_success', (data) => {
     let room_num_header = document.getElementById('room_num_header');
     room_num_header.innerHTML = "No room joined";
 });
-
