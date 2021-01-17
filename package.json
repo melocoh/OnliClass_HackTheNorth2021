@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "./server/server.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.3",
@@ -19,7 +19,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node ./server/server.js"
   },
   "engines": {
     "node": "10.x"
