@@ -43,11 +43,6 @@ if (!apiKey || !secret) {
 const OpenTok = require('opentok');
 const opentok = new OpenTok(apiKey, secret);
 
-// IMPORTANT: roomToSessionIdDictionary is a variable that associates room names with unique
-// unique session IDs. However, since this is stored in memory, restarting your server will
-// reset these values if you want to have a room-to-session association in your production
-// application you should consider a more persistent storage
-
 var roomToSessionIdDictionary = {};
 
 // returns the room name, given a session ID that was associated with it
