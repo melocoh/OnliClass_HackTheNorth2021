@@ -73,10 +73,9 @@ textarea:focus, #messageBar:focus{
   "canv canv canv canv chat "
   ;
 
-  height: 100%;
   grid-gap: 20px;
   background: #003C71;
-  padding: 19px;
+  padding: 20px;
   padding-bottom: 27px;
   row-gap: 18px;
   column-gap: 20px;
@@ -99,12 +98,10 @@ textarea:focus, #messageBar:focus{
 
 .video-holder {
   grid-area: vid;
-  background-color: red;
 }
 
 .canvas-holder-holder {
   grid-area: canv;
-  background-color: blue;
 }
 
 #calculator, #firepad {
