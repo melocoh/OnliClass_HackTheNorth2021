@@ -13,7 +13,7 @@ var sequelize = new Sequelize('danielye', 'user', 'password1234', {
   host: 'trusty-lemur-8c3.gcp-northamerica-northeast1.cockroachlabs.cloud',
   dialectOptions: {
     ssl: {
-        ca: fs.readFileSync('C:/Work/hack_the_north/trusty-lemur-ca.crt')
+        ca: fs.readFileSync('./trusty-lemur-ca.crt')
             .toString(),
     }
 },
