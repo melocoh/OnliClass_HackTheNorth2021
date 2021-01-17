@@ -93,7 +93,6 @@ textarea:focus, #messageBar:focus{
 
 #chat {
   grid-area: chat;
-  background-color: darkgrey;
 }
 
 .video-holder {
