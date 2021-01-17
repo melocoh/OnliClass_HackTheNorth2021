@@ -10,6 +10,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
       <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+      
       <!-- Firebase -->
       <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
@@ -36,10 +37,10 @@
             <input id = "roomnumInput" class = "overlayInput" type="text" maxlength="14" />
          </div>
       </div>
+      
+      <h1 id = "room_num_header"> N/A </h1>
       <div id = "container-wrapper" class = "wrapper" style = "visibility: hidden;">
-         <h1 id = "room_num_header"> N/A </h1>
          <!-- Chat -->
-         <div class="chat-holder">
             <div id="chat">
                <div id="chatRoom">
                </div>
@@ -52,7 +53,6 @@
                   </div>
                </div>
             </div>
-         </div>
          <!-- Canvas -->
          <div class="canvas-holder-holder">
             <div id="canvasHolder">
