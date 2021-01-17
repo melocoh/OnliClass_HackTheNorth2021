@@ -73,7 +73,7 @@ $(document).ready(function() {
       // If the username is valid
       if (username) {
           $name_overlay.fadeOut();
-          $room_overlay.show();
+          $room_overlay.css('visibility', 'visible');
           $name_overlay.off('click');
           $currentInput = $inputMessage.focus();
           // Tell the server your username
@@ -83,12 +83,13 @@ $(document).ready(function() {
 
   // Sets the client's room number
   const setRoomNum = () => {
-      if (!$roomnumInput.val()) return;
+      console.log("huh?");
       room_num = cleanInput($roomnumInput.val().trim());
       console.log(room_num);
       joinRoom(room_num, username);
       $room_overlay.fadeOut();
-      $containerWrapper.show();
+      console.log("should be changing the css");
+      $containerWrapper.css('visibility', 'visible');
   }
   // Adds the visual chat message to the message list
   const addChatMessage = (data, options) => {
