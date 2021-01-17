@@ -3,25 +3,26 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    justify-content: center;
 }
+
 .wrapper {
     display: grid;
     grid-template-areas: 
-        "black black red red red red"
-        "blue blue green green green grey"
+    "calc calc calc calc red red" 
+    "blue blue blue blue blue black"
     ;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
     /* grid-template-rows: 100px 350px; */
     height: 100%;
-    grid-gap:50px;
-    margin: 1%;
+    grid-gap:20px;
+    margin: 1% 13%;
 }
 
 .black {
     grid-area: black;
     background-color: darkgrey;
 }
-
 
 .red {
     grid-area: red;
@@ -34,8 +35,8 @@ body {
     width: 5x;
 }
 
-.green {
-    grid-area: green;
+#calculator {
+    grid-area: calc;
     background-color: green;
 }
 

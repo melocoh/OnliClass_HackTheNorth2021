@@ -8,18 +8,32 @@
       <link rel="stylesheet" href="../css/canvas.css">
       <link rel="stylesheet" href="../css/video.css">
       <link rel="stylesheet" href="../css/firepad.css">
+
+            <!-- Firepad -->
+            <link rel="stylesheet" href="https://firepad.io/releases/v1.5.10/firepad.css" />
+            <script src="https://firepad.io/releases/v1.5.10/firepad.min.js"></script>
+
+      <!-- Desmos -->
+      <script src="https://www.desmos.com/api/v1.5/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+
 </head>
 
 <body>
-
     <div class="wrapper">
-        <div class="black">One</div>
+        <div class="calc" id="calculator"></div>
         <div class="red">Two</div>
         <div class="blue">Three</div>
-        <div class="green">Four</div>
-        <div class="grey">Five</div>
-      </div>
+        <div class="black">Four</div>
 
+      </div>
+      
+
+
+      <script>
+        var elt = document.getElementById('calculator');
+        var calculator = Desmos.GraphingCalculator(elt);
+        calculator.setExpression({ id: 'graph1', latex: 'y=x^2' });
+      </script>
 </body>
 
 </html>
