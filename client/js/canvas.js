@@ -78,7 +78,6 @@ $(document).ready(function() {
 
   /* Listeners */
   function onMouseUp(e){
-    if (!drawing) { return; }
     drawing = false;
     drawLine(current.x, current.y, e.clientX||e.touches[0].clientX, e.clientY||e.touches[0].clientY, current.color, true);
   }

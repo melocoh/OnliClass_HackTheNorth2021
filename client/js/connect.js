@@ -59,8 +59,6 @@ socket.on('join_room_fail', (data) => {
 
 socket.on('join_room_success', (data) => {
 
-    let room_num_header = document.getElementById('room_num_header');
-    room_num_header.innerHTML = data.room_num;
     let is_host = false;
 
     if(data.role === 'host') is_host = true;
@@ -83,14 +81,8 @@ socket.on('create_room_fail', (data) => {
 
 socket.on('create_room_success', (data) => {
     console.log(data);
-    let room_num_header = document.getElementById('room_num_header');
-    room_num_header.innerHTML = data;
 });
 
-socket.on('leave_room_success', (data) => {
-    let room_num_header = document.getElementById('room_num_header');
-    room_num_header.innerHTML = "No room joined";
-});
 
 
 
