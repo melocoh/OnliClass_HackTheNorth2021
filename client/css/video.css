@@ -20,6 +20,10 @@
   width: 50%;
 } */
 
+.OT_widget-container {
+  border-radius: 3px;
+}
+
 #publisher {
   width: 360px;
   height: 240px;
@@ -28,4 +32,6 @@
   z-index: 100;
   border: 3px solid white;
   border-radius: 3px;
+  margin-right: -20px;
+
 }
