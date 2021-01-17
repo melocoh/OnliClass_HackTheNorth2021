@@ -9,7 +9,6 @@ header {
 
 body {
   background-color: #E1EDEF;
-  height: 80vh;
 }
 
 /* Chat Section */
@@ -27,6 +26,9 @@ body {
   max-height: 70vh;
   overflow-y: auto;
   overflow-x: hidden;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  height: 100%;
 }
 
 #chatRoom li {
@@ -45,7 +47,7 @@ body {
 
 #messageBar {
   border: 1px solid rgb(215, 215, 215);
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 5px 10px 5px 10px;
   margin-right: 10px;
   width:16vw;
@@ -60,26 +62,37 @@ textarea:focus, #messageBar:focus{
   color: rgb(255, 255, 255);
   padding: 5px 10px 5px 10px;
   border: 1px solid rgb(31, 165, 255);
-  border-radius: 5px;
+  border-radius: 3px;
   outline: none;
 }
 
 .wrapper {
   display: grid;
   grid-template-areas: 
-  "calc calc calc calc vid vid" 
-  "canv canv canv canv chat chat"
+  "calc calc calc calc vid " 
+  "canv canv canv canv chat "
   ;
+
   height: 100%;
   grid-gap: 20px;
-  margin: 1% 13%;
+  background: #003C71;
+  padding: 19px;
+  padding-bottom: 27px;
+  row-gap: 18px;
+  column-gap: 20px;
+  border-radius: 5px; 
 }
 
 .wrapper > div {
-  border-radius: 15px;
+  border-radius: 3px;
 }
 
-.chat-holder {
+.buttons {
+  grid-area: but;
+  background-color: brown;
+}
+
+#chat {
   grid-area: chat;
   background-color: darkgrey;
 }
