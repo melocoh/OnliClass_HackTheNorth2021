@@ -34,12 +34,18 @@ $(document).ready(function() {
   /* Draw your own line, then emit the line you drew to others*/
   function drawLine(x0, y0, x1, y1, color, emit){
 
-    console.log('drawining line');
+    console.log('drawing line');
     context.beginPath();
 
+    let xoffSet = -25;
+    let yoffSet = -500;
+
+    console.log(x0);
+    console.log(y0);
+
     /* We need to programmatically set this or hardcode this at the end XD */
-    context.moveTo(x0 - 100, y0 - 75);
-    context.lineTo(x1 - 100, y1 - 75);
+    context.moveTo(x0 + xoffSet, y0 + yoffSet);
+    context.lineTo(x1 + xoffSet, y1 + yoffSet);
     context.strokeStyle = color;
     context.lineWidth = 2;
     context.stroke();
@@ -63,6 +69,8 @@ $(document).ready(function() {
   /* Listeners */
   function onMouseDown(e){
     drawing = true;
+    console.log(e.clientX);
+    console.log(e.clientY);
     current.x = e.clientX||e.touches[0].clientX;
     current.y = e.clientY||e.touches[0].clientY;
   }
@@ -81,13 +89,6 @@ $(document).ready(function() {
     let w = canvas.width;
     let h = canvas.height;
     if (!drawing) { 
-
-        socket.emit('mouse', {
-            x0: e.clientX / w,
-            y0: e.clientY / h,
-            name: "hardcode"
-        });
-
         onDrawingEvent(); 
     }
     drawLine(current.x, current.y, e.clientX||e.touches[0].clientX, e.clientY||e.touches[0].clientY, current.color, true);
