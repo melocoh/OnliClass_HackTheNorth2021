@@ -7,71 +7,39 @@
       <link rel="stylesheet" href="../css/canvas.css">
       <link rel="stylesheet" href="../css/video.css">
       <link rel="stylesheet" href="../css/firepad.css">
-
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
       <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
-
       <!-- Firebase -->
       <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-auth.js"></script>
       <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
-
       <!-- CodeMirror -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.js"></script>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.css" />
-
       <!-- Firepad -->
       <link rel="stylesheet" href="https://firepad.io/releases/v1.5.10/firepad.css" />
       <script src="https://firepad.io/releases/v1.5.10/firepad.min.js"></script>
-
       <!-- Desmos -->
       <script src="https://www.desmos.com/api/v1.5/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-
    </head>
    <body>
-
       <div id = "name_overlay" class = "overlay">
          <div class="form">
             <h3 class="title">What's your nickname?</h3>
             <input id = "usernameInput" class="overlayInput" type="text" maxlength="14" />
          </div>
       </div>
-
-      <div id = "room_overlay" class = "overlay hidden">
+      <div id = "room_overlay" class = "overlay" style = "visibility: hidden;">
          <div class="form">
             <h3 class="title">Enter your room number</h3>
             <input id = "roomnumInput" class = "overlayInput" type="text" maxlength="14" />
          </div>
       </div>
-
-
-
-
-
-      <div id="container-wrapper" class = "hidden">
-         <div id = "container">
-            <h1 id = "room_num_header"> N/A </h1>
-            <form id = "room_form">
-               <label for="room_num">Room #:</label><br>
-               <input type="text" id="room_num" name="room_num"><br>
-               <input type="button" value="Join this room" onclick="joinRoom();"/>
-            </form>
-            <form id = "create_room_form">
-               <label for="room_num">Room #:</label><br>
-               <input type="text" id="create_room_num" name="room_num"><br>
-               <input type="button" value="Create a room" onclick="createRoom();" />
-            </form>
-            <form>
-               <input id="clickLeave" type="button" value="Leave a room" onclick="leaveRoom();" />
-            </form>
-               <input id="clickCreateRandom" type="button" value="Create Random Room" onclick="createRandomRoom();" />
-            </form>
-            <form>
-               <input id="init" type="button" value="huh" onclick="init();" />
-            </form>
-                                                   
-            <!-- Chat -->
+      <div id = "container-wrapper" class = "wrapper" style = "visibility: hidden;">
+         <h1 id = "room_num_header"> N/A </h1>
+         <!-- Chat -->
+         <div class="chat-holder">
             <div id="chat">
                <div id="chatRoom">
                </div>
@@ -84,37 +52,33 @@
                   </div>
                </div>
             </div>
-
-            <!-- Canvas -->
-            <div id = "canvasHolder" style = "display: inline-block"> 
+         </div>
+         <!-- Canvas -->
+         <div class="canvas-holder-holder">
+            <div id="canvasHolder">
                <div id="color">
                   <input type="color" id="colorChoice" value="#000000">
-                </div>
-                <canvas id="whiteboard" width="700" height="420" ></canvas>
+               </div>
+               <canvas id="whiteboard"></canvas>
             </div>
-
-
-            <!-- Video -->
-            <div id="video" style = "background-color: blue;">
+         </div>
+         <!-- Video -->
+         <div class="video-holder">
+            <div id="video">
                <div id="subscriber"></div>
                <div id="publisher"></div>
-           </div>
-
-           <!-- Firepad -->
-
-           <div id="userlist"></div>
-           <div id="firepad"></div>
-           <div id="calculator" style="width: 600px; height: 400px;"></div>
-       
+            </div>
          </div>
+         <!-- Firepad -->
+         <div id="userlist"></div>
+         <div id="firepad"></div>
+         <div id="calculator" class = "calc" style="width: 600px; height: 400px;"></div>
       </div>
-
       <script src = "/socket.io/socket.io.js"></script>
       <script src = "/js/connect.js"></script>
       <script src = "/js/chat.js"></script>
       <script src = "/js/canvas.js"></script>
       <script src = "/js/video.js"></script>
       <script src = "/js/firepad.js"></script>
-
    </body>
 </html>

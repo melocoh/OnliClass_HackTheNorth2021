@@ -1,24 +1,12 @@
 
-body {
-  font: 13px Helvetica, Arial;
-  background-color: #EEEEEE;
+
+
+header {
+  text-align: center;
 }
-
-
-/* Grid Container */
-#container {
-  display: grid;
-  grid-template-areas: 
-  "hd hd hd hd hd hd hd hd hd"
-  "ca ca ca ca ca ca ch ch ch";
-  grid-column-gap: 10px;
-  margin: 1vh 5vw 1vh 5vw;
-}
-
 
 /* Chat Section */
 #chat {
-  grid-area: ch;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,18 +56,47 @@ textarea:focus, #messageBar:focus{
   outline: none;
 }
 
-#header{
-  grid-area: hd;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-family: VT323;
-  font-size: 50px;
-  text-align: center;
+.wrapper {
+  display: grid;
+  grid-template-areas: 
+  "calc calc calc calc vid vid" 
+  "canv canv canv canv canv chat"
+  ;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
+  height: 100%;
+  grid-gap: 20px;
+  margin: 1% 13%;
+}
+
+.wrapper > div {
+  border-radius: 15px;
+}
+
+.chat-holder {
+  grid-area: chat;
+  background-color: darkgrey;
+}
+
+.video-holder {
+  grid-area: vid;
+  background-color: red;
+}
+
+.canvas-holder-holder {
+  grid-area: canv;
+  background-color: blue;
+}
+
+#calculator {
+  grid-area: calc;
+  background-color: green;
+}
+
+.grey {
+  grid-area: grey;
+  background-color: lightgray;
 }
 
 .hidden{
-  display:none;
+  visibility:hidden;
 }

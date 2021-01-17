@@ -37,7 +37,7 @@ function findRoomFromSessionId(sessionId) {
 router.get('/', function (req, res) {
 
   console.log(__dirname);
-  res.sendFile(path.join(__dirname, '../../client/html', 'layout.html'))
+  res.sendFile(path.join(__dirname, '../../client/html', 'index.html'))
 });
 
 /**
