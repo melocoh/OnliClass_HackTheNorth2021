@@ -5,6 +5,10 @@ header {
   text-align: center;
 }
 
+body {
+  background-color: #E1EDEF;
+}
+
 /* Chat Section */
 #chat {
   display: flex;
@@ -87,7 +91,7 @@ textarea:focus, #messageBar:focus{
   background-color: blue;
 }
 
-#calculator {
+#calculator, #firepad {
   grid-area: calc;
   background-color: green;
 }

@@ -209,9 +209,9 @@ $(document).ready(function() {
 
   $window.keydown(event => {
       // Auto-focus the current input when a key is typed
-      if (!(event.ctrlKey || event.metaKey || event.altKey)) {
-          $currentInput.focus();
-      }
+    //   if (!(event.ctrlKey || event.metaKey || event.altKey)) {
+    //       $currentInput.focus();
+    //   }
       // When the client hits ENTER on their keyboard
       if (event.which === 13) {
           if (username && room_num) {
