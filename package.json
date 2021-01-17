@@ -13,6 +13,8 @@
     "lodash": "^4.17.4",
     "morgan": "^1.10.0",
     "opentok": "^2.10.0",
+    "pg": "^8.5.1",
+    "sequelize": "^6.3.5",
     "socket.io": "^3.0.4",
     "unique-names-generator": "^4.3.1"
   },
