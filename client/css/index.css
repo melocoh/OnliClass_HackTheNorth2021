@@ -79,3 +79,7 @@ textarea:focus, #messageBar:focus{
   font-size: 50px;
   text-align: center;
 }
+
+.hidden{
+  display:none;
+}

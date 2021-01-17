@@ -1,0 +1,33 @@
+.form .overlayInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.form {
+  height: 100px;
+  margin-top: -100px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  background-color: turquoise;
+}
+
+.overlay .title {
+  font-size: 200%;
+}
+
+.overlay .overlayInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
