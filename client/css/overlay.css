@@ -20,7 +20,7 @@
 .overlay {
   width: 100vw;
   height: 100vh;
-  background-color: turquoise;
+  background-color: #E1EDEF;
 }
 
 .overlay .title {
