@@ -1,4 +1,4 @@
-/* 
+
 #videos {
   width: 100%;
   height: 100%;
@@ -12,6 +12,11 @@
   width: 100%;
   height: 100%;
   z-index: 10;
+  display: flex;
+}
+
+#subscriber > div{
+  width: 50%;
 }
 
 #publisher {
@@ -22,4 +27,4 @@
   z-index: 100;
   border: 3px solid white;
   border-radius: 3px;
-} */
+}
