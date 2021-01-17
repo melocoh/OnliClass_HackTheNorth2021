@@ -38,7 +38,7 @@ $(document).ready(function() {
     context.beginPath();
 
     let xoffSet = -25;
-    let yoffSet = -500;
+    let yoffSet = -550;
 
     console.log(x0);
     console.log(y0);
