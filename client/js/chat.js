@@ -43,7 +43,6 @@ $(document).ready(function() {
       message = cleanInput(message);
       // if there is a non-empty message and a socket connection
       if (message && connected) {
-          console.log("here im also in here?");
           $inputMessage.val('');
           addChatMessage({
               username: username,
@@ -68,13 +67,12 @@ $(document).ready(function() {
   // Sets the client's username
   const setUsername = () => {
       username = cleanInput($usernameInput.val().trim());
-
-      console.log(username);
       // If the username is valid
       if (username) {
           $name_overlay.fadeOut();
           $room_overlay.css('visibility', 'visible');
           $name_overlay.off('click');
+          connected = true;
           $currentInput = $inputMessage.focus();
           // Tell the server your username
           socket.emit('add user', username);
@@ -83,12 +81,10 @@ $(document).ready(function() {
 
   // Sets the client's room number
   const setRoomNum = () => {
-      console.log("huh?");
       room_num = cleanInput($roomnumInput.val().trim());
       console.log(room_num);
       joinRoom(room_num, username);
       $room_overlay.fadeOut();
-      console.log("should be changing the css");
       $containerWrapper.css('visibility', 'visible');
   }
   // Adds the visual chat message to the message list
@@ -250,7 +246,6 @@ $(document).ready(function() {
 
   // Whenever the server emits 'entrance', log the login message
   socket.on('entrance', (data) => {
-      connected = true;
       // Display the welcome message
       let message = "- Welcome to the Chat – " + data.username;
       log(message, {

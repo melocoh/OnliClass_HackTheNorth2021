@@ -31,6 +31,10 @@ io.on('connection', (socket) => {
     socket.on('add user', (username) => {
         if (!username || nickname) return;
         nickname = username;
+        data = {
+            username: username
+        }
+        socket.emit('entrance', data);
     })
 
     socket.on('drawing', data => {
@@ -44,11 +48,14 @@ io.on('connection', (socket) => {
     /* Handle room enter event */
     socket.on('join_room', data => {
         console.log("someone wants to join a room");
-
         if (data.room_num && allRooms.has(data.room_num)) {
             console.log("successfully joined room: " + data.room_num);
             joined_room = data.room_num;
             allRooms.get(data.room_num).add(socket);
+            data = {
+                ...data,
+                'role': 'viewer',
+            }
             socket.emit("join_room_success", data);
         } else if (data.room_num) {
             let set = new Set();
@@ -56,6 +63,10 @@ io.on('connection', (socket) => {
             allRooms.set(data.room_num, set);
             joined_room = data.room_num + '';
             console.log("created and joined room: " + data.room_num);
+            data = {
+                ...data,
+                'role': 'host'
+            }
             socket.emit("join_room_success", data);
         }
 
